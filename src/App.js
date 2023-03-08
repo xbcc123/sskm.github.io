@@ -17,10 +17,10 @@ const App = () => (
     <Header className={styles.head}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span>
-          <span>Landbot 卡密</span>
-          <span style={{ marginLeft: 10, fontSize: 12, color: '#666' }}>联系微信 qq793178</span>
+          <span>Landbot卡密</span>
+          <span style={{ marginLeft: 10, fontSize: 12, color: '#666' }}>联系微信qq793178</span>
         </span>
-        <Link to={`pay_list`}><Button type='link' >查看历史订单</Button></Link>
+        <Link to={`pay_list`}><Button type='link' >历史订单</Button></Link>
       </div>
     </Header>
     <Content style={contentStyle}>
