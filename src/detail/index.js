@@ -2,7 +2,7 @@
  * @Author: yankj yankj
  * @Date: 2023-03-07 19:42:55
  * @LastEditors: yankj yankj
- * @LastEditTime: 2023-03-08 15:56:37
+ * @LastEditTime: 2023-03-08 17:36:04
  * @FilePath: /my-app/src/detail/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -12,6 +12,7 @@ import { payPreCreate } from '../api'
 import BigNumber from "bignumber.js";
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import { txt } from "./txt";
 
 export const Detail = () => {
 
@@ -50,13 +51,13 @@ export const Detail = () => {
             <Card >
                 <div className={styles.proTit}>选择产品</div>
                 <Card className={styles.pro} bodyStyle={{ padding: 0, paddingLeft: 8, paddingTop: 4 }}>
-                    <div className={styles.name}>产品名称</div>
+                    <div className={styles.name}>ChatGPT账号</div>
                     <div className={styles.price}>¥ {price}</div>
                     <div className={styles.count}>库存 999</div>
                 </Card>
-                <div className={styles.proDes}>商品描述</div>
-                <div>
-                    <div>商品描述</div>
+                <div className={styles.proDesTit}>商品描述</div>
+                <div className={styles.proDes}>
+                    <div dangerouslySetInnerHTML={{ __html: txt }}></div>
                 </div>
             </Card>
         </Col>
@@ -99,10 +100,11 @@ export const Detail = () => {
             </Card>
         </Col>
 
-        <Modal maskClosable={false} width={500} cancelText='取消' okText={<Link to={`pay_list?phone=${form?.getFieldValue?.('phone')}`}>支付完成，点击这里查看卡密</Link>} title="支付宝扫码" open={visible} onOk={() => {
+        <Modal maskClosable={false} width={500} cancelText='取消' okText={<Link to={`pay_list?phone=${form?.getFieldValue?.('phone')}`}>支付完成</Link>} title={<>支付宝扫码<span style={{color: 'red', fontSize: 14, marginLeft: 10}}>支付成功后查看邮箱或者到查询订单获取卡密</span></>} open={visible} onOk={() => {
             setVisible(false)
         }} onCancel={() => setVisible(false)}>
             <div style={{margin: '0 auto', width: 200, height: 260, marginTop: 30}}>
+                
                 <Image  style={{margin: '0 auto', width: 200}} src={result}></Image>
             </div>
         </Modal>

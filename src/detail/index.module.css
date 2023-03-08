@@ -25,10 +25,15 @@
     font-size: 16px;
 }
 
-.proDes {
+.proDesTit {
     margin-top: 20px;
     margin-bottom: 10px;
     font-size: 16px;
+}
+
+.proDes {
+    background: aliceblue;
+    padding: 10px;
 }
 
 .buyTit {
