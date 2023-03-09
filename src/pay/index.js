@@ -72,6 +72,7 @@ const PayList = () => {
                                     <div> 手机号：{item.phone || '-'}</div>
                                     <div> 数量：{item.number || '-'}</div>
                                     <div> 单价：{item.price || '-'}</div>
+                                    <div> 二维码：{item.qrCode ? <img style={{ width: 100, height: 100 }} src={item.qrCode}></img>  : '-'}</div>
                                 </>}
                             />
                         </List.Item>
