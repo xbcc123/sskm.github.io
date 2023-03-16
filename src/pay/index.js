@@ -1,3 +1,11 @@
+/*
+ * @Author: yankj yankj
+ * @Date: 2023-03-08 11:04:51
+ * @LastEditors: yankj yankj
+ * @LastEditTime: 2023-03-16 18:02:21
+ * @FilePath: /my-app/src/pay/index.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import { Card, Input, Row, Col, List, Form, Spin } from "antd"
 import { useEffect, useRef, useState } from "react"
 import { orderQuery } from '../api'
@@ -72,7 +80,11 @@ const PayList = () => {
                                     <div> 手机号：{item.phone || '-'}</div>
                                     <div> 数量：{item.number || '-'}</div>
                                     <div> 单价：{item.price || '-'}</div>
-                                    <div> 二维码：{item.qrCode ? <img style={{ width: 100, height: 100 }} src={item.qrCode}></img>  : '-'}</div>
+                                    <div>
+                                     <span style={{color: 'red'}}>微信扫描二维码绑定Landbot会员使用卡密</span>
+                                    </div>
+                                    <div>{item.qrCode ? <img style={{ width: 100, height: 100 }} src={item.qrCode}></img>  : '-'}
+                                    </div>
                                 </>}
                             />
                         </List.Item>
